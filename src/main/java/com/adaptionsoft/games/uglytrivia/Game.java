@@ -11,22 +11,13 @@ public class Game {
     boolean[] inPenaltyBox = new boolean[6];
 
     Questions popQuestions = new Questions("Pop");
-    LinkedList<Question> scienceQuestions = new LinkedList();
-    LinkedList<Question> sportsQuestions = new LinkedList();
-    LinkedList<Question> rockQuestions = new LinkedList();
+    Questions scienceQuestions = new Questions("Science");
+    Questions sportsQuestions = new Questions("Sports");
+    Questions rockQuestions = new Questions("Rock");
     // TODO miss to add question field
 
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
-
-    public Game() {
-        for (int i = 0; i < 50; i++) {
-            scienceQuestions.addLast(new Question("Science", i));
-            sportsQuestions.addLast(new Question("Sports", i));
-            rockQuestions.addLast(new Question("Rock", i));
-            // TODO forget to initialise it, or initalize it to wrong category
-        }
-    }
 
     public boolean isPlayable() {
         return (howManyPlayers() >= 2);
@@ -86,11 +77,11 @@ public class Game {
         if (currentCategory() == "Pop")
             System.out.println(popQuestions.next());
         if (currentCategory() == "Science")
-            System.out.println(scienceQuestions.removeFirst());
+            System.out.println(scienceQuestions.next());
         if (currentCategory() == "Sports")
-            System.out.println(sportsQuestions.removeFirst());
+            System.out.println(sportsQuestions.next());
         if (currentCategory() == "Rock")
-            System.out.println(rockQuestions.removeFirst());
+            System.out.println(rockQuestions.next());
         // TODO forget to add to ask, use wrong questions for category
     }
 
