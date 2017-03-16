@@ -2,16 +2,16 @@ package com.adaptionsoft.games.uglytrivia;
 
 public class Question {
     private final Category category;
-    private final int number;
+    private final String question;
 
-    public Question(Category category, int number) {
+    public Question(Category category, String question) {
         this.category = category;
-        this.number = number;
+        this.question = question;
     }
 
     @Override
     public String toString() {
-        return category.toString() + " Question " + number;
+        return category.toString() + " Question " + question;
     }
 
     public Category category() {
