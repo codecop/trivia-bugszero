@@ -11,7 +11,7 @@ public class Game {
 	int[] purses = new int[6];
 	boolean[] inPenaltyBox = new boolean[6];
 
-	LinkedList popQuestions = new LinkedList();
+	LinkedList<Question> popQuestions = new LinkedList();
 	LinkedList scienceQuestions = new LinkedList();
 	LinkedList sportsQuestions = new LinkedList();
 	LinkedList rockQuestions = new LinkedList();
@@ -22,7 +22,7 @@ public class Game {
 
 	public Game() {
 		for (int i = 0; i < 50; i++) {
-			popQuestions.addLast("Pop Question " + i);
+			popQuestions.addLast(new Question("Pop", i));
 			scienceQuestions.addLast(("Science Question " + i));
 			sportsQuestions.addLast(("Sports Question " + i));
 			rockQuestions.addLast(createRockQuestion(i));
