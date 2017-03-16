@@ -15,6 +15,7 @@ public class Game {
 	LinkedList scienceQuestions = new LinkedList();
 	LinkedList sportsQuestions = new LinkedList();
 	LinkedList rockQuestions = new LinkedList();
+	// TODO miss to add question field
 
 	int currentPlayer = 0;
 	boolean isGettingOutOfPenaltyBox;
@@ -25,6 +26,7 @@ public class Game {
 			scienceQuestions.addLast(("Science Question " + i));
 			sportsQuestions.addLast(("Sports Question " + i));
 			rockQuestions.addLast(createRockQuestion(i));
+			// TODO forget to initialise it, or initalize it to wrong category
 		}
 	}
 
@@ -95,6 +97,7 @@ public class Game {
 			System.out.println(sportsQuestions.removeFirst());
 		if (currentCategory() == "Rock")
 			System.out.println(rockQuestions.removeFirst());
+		// TODO forget to add to ask, use wrong questions for category
 	}
 
 	private String currentCategory() {
@@ -117,6 +120,7 @@ public class Game {
 		if (places[currentPlayer] == 10)
 			return "Sports";
 		return "Rock";
+		// TODO forget to add category
 	}
 
 	public boolean wasCorrectlyAnswered() {
