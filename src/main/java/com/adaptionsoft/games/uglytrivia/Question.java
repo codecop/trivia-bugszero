@@ -13,4 +13,8 @@ public class Question {
     public String toString() {
         return category.toString() + " Question " + number;
     }
+
+    public Category category() {
+        return category;
+    }
 }

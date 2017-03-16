@@ -12,11 +12,7 @@ public class Game {
     int[] purses = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
 
-    Questions popQuestions = new Questions(Category.POP);
-    Questions scienceQuestions = new Questions(Category.SCIENCE);
-    Questions sportsQuestions = new Questions(Category.SPORTS);
-    Questions rockQuestions = new Questions(Category.ROCK);
-    // TODO miss to add question field
+    private final Questions questions = new Questions();
 
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
@@ -76,15 +72,7 @@ public class Game {
     }
 
     private void askQuestion() {
-        if (currentCategory() == Category.POP)
-            System.out.println(popQuestions.next());
-        if (currentCategory() == Category.SCIENCE)
-            System.out.println(scienceQuestions.next());
-        if (currentCategory() == Category.SPORTS)
-            System.out.println(sportsQuestions.next());
-        if (currentCategory() == Category.ROCK)
-            System.out.println(rockQuestions.next());
-        // TODO forget to add to ask, use wrong questions for category
+        System.out.println(questions.next(currentCategory()));
     }
 
     private Category currentCategory() {

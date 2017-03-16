@@ -1,6 +1,7 @@
 package com.adaptionsoft.games.uglytrivia;
 
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 /**
  * Created by bastien on 16/03/2017.
@@ -8,17 +9,22 @@ import java.util.LinkedList;
 public class Questions {
 
     private LinkedList<Question> questions = new LinkedList();
-    private Category category;
 
-    public Questions(Category category) {
-        this.category = category;
-
-        for (int i = 0; i < 50; i++) {
-            questions.addLast(new Question(category, i));
+    public Questions() {
+        for (Category category : Category.values()) {
+            for (int i = 0; i < 50; i++) {
+                questions.addLast(new Question(category, i));
+            }
         }
     }
 
-    public Question next() {
-        return questions.removeFirst();
+    public Question next(Category category) {
+        for (Question question : questions) {
+            if (question.category() == category) {
+                questions.remove(question);
+                return question;
+            }
+        }
+        throw new NoSuchElementException(category.toString());
     }
 }
