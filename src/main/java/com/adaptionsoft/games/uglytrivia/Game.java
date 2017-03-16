@@ -12,10 +12,10 @@ public class Game {
     int[] purses = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
 
-    Questions popQuestions = new Questions("Pop");
-    Questions scienceQuestions = new Questions("Science");
-    Questions sportsQuestions = new Questions("Sports");
-    Questions rockQuestions = new Questions("Rock");
+    Questions popQuestions = new Questions(Category.POP);
+    Questions scienceQuestions = new Questions(Category.SCIENCE);
+    Questions sportsQuestions = new Questions(Category.SPORTS);
+    Questions rockQuestions = new Questions(Category.ROCK);
     // TODO miss to add question field
 
     int currentPlayer = 0;

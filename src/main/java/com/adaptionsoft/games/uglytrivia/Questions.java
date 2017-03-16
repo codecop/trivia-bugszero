@@ -8,9 +8,9 @@ import java.util.LinkedList;
 public class Questions {
 
     private LinkedList<Question> questions = new LinkedList();
-    private String category;
+    private Category category;
 
-    public Questions(String category) {
+    public Questions(Category category) {
         this.category = category;
 
         for (int i = 0; i < 50; i++) {
