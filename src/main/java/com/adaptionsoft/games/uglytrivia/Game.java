@@ -1,5 +1,7 @@
 package com.adaptionsoft.games.uglytrivia;
 
+import com.sun.org.apache.bcel.internal.generic.POP;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -74,37 +76,37 @@ public class Game {
     }
 
     private void askQuestion() {
-        if (currentCategory() == "Pop")
+        if (currentCategory() == Category.POP)
             System.out.println(popQuestions.next());
-        if (currentCategory() == "Science")
+        if (currentCategory() == Category.SCIENCE)
             System.out.println(scienceQuestions.next());
-        if (currentCategory() == "Sports")
+        if (currentCategory() == Category.SPORTS)
             System.out.println(sportsQuestions.next());
-        if (currentCategory() == "Rock")
+        if (currentCategory() == Category.ROCK)
             System.out.println(rockQuestions.next());
         // TODO forget to add to ask, use wrong questions for category
     }
 
-    private String currentCategory() {
+    private Category currentCategory() {
         if (places[currentPlayer] == 0)
-            return "Pop";
+            return Category.POP;
         if (places[currentPlayer] == 4)
-            return "Pop";
+            return Category.POP;
         if (places[currentPlayer] == 8)
-            return "Pop";
+            return Category.POP;
         if (places[currentPlayer] == 1)
-            return "Science";
+            return Category.SCIENCE;
         if (places[currentPlayer] == 5)
-            return "Science";
+            return Category.SCIENCE;
         if (places[currentPlayer] == 9)
-            return "Science";
+            return Category.SCIENCE;
         if (places[currentPlayer] == 2)
-            return "Sports";
+            return Category.SPORTS;
         if (places[currentPlayer] == 6)
-            return "Sports";
+            return Category.SPORTS;
         if (places[currentPlayer] == 10)
-            return "Sports";
-        return "Rock";
+            return Category.SPORTS;
+        return Category.ROCK;
         // TODO forget to add category
     }
 
