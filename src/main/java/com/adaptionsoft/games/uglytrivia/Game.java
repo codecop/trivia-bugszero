@@ -10,7 +10,7 @@ public class Game {
     int[] purses = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
 
-    LinkedList<Question> popQuestions = new LinkedList();
+    Questions popQuestions = new Questions("Pop");
     LinkedList<Question> scienceQuestions = new LinkedList();
     LinkedList<Question> sportsQuestions = new LinkedList();
     LinkedList<Question> rockQuestions = new LinkedList();
@@ -21,7 +21,6 @@ public class Game {
 
     public Game() {
         for (int i = 0; i < 50; i++) {
-            popQuestions.addLast(new Question("Pop", i));
             scienceQuestions.addLast(new Question("Science", i));
             sportsQuestions.addLast(new Question("Sports", i));
             rockQuestions.addLast(new Question("Rock", i));
@@ -85,7 +84,7 @@ public class Game {
 
     private void askQuestion() {
         if (currentCategory() == "Pop")
-            System.out.println(popQuestions.removeFirst());
+            System.out.println(popQuestions.next());
         if (currentCategory() == "Science")
             System.out.println(scienceQuestions.removeFirst());
         if (currentCategory() == "Sports")
