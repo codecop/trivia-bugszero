@@ -3,9 +3,6 @@ package com.adaptionsoft.games.uglytrivia;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
-/**
- * Created by bastien on 16/03/2017.
- */
 public class Questions {
 
     private LinkedList<Question> questions = new LinkedList();
