@@ -6,32 +6,32 @@ import com.adaptionsoft.games.uglytrivia.Game;
 
 public class GameRunner {
 
-	private static boolean notAWinner;
+    private static boolean notAWinner;
 
-	public static void main(String[] args) {
-		Random rand = new Random();
-		playGame(rand);
-	}
+    public static void main(String[] args) {
+        Random rand = new Random();
+        playGame(rand);
+    }
 
-	public static Game playGame(Random randomizer) {
-		Game aGame = new Game();
+    public static Game playGame(Random randomizer) {
+        Game aGame = new Game();
 
-		aGame.add("Chet");
-		aGame.add("Pat");
-		aGame.add("Sue");
+        aGame.add("Chet");
+        aGame.add("Pat");
+        aGame.add("Sue");
 
-		do {
+        do {
 
-			aGame.roll(randomizer.nextInt(5) + 1);
+            aGame.roll(randomizer.nextInt(5) + 1);
 
-			if (randomizer.nextInt(9) == 7) {
-				notAWinner = aGame.wrongAnswer();
-			} else {
-				notAWinner = aGame.wasCorrectlyAnswered();
-			}
+            if (randomizer.nextInt(9) == 7) {
+                notAWinner = aGame.wrongAnswer();
+            } else {
+                notAWinner = aGame.wasCorrectlyAnswered();
+            }
 
-		} while (notAWinner);
+        } while (notAWinner);
 
-		return aGame;
-	}
+        return aGame;
+    }
 }
