@@ -2,6 +2,8 @@ package com.adaptionsoft.games.trivia;
 
 import com.adaptionsoft.games.trivia.runner.GameRunner;
 import org.approvaltests.Approvals;
+import org.approvaltests.reporters.JunitReporter;
+import org.approvaltests.reporters.UseReporter;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -9,6 +11,7 @@ import java.io.PrintStream;
 import java.util.Random;
 import java.util.stream.IntStream;
 
+@UseReporter(JunitReporter.class)
 public class GameTest {
 
     @Test
